@@ -1,0 +1,5 @@
+{
+	"items": [
+		{"name": "KindleExplorer", "priority": 1, "action": "bin/explorer.sh"}
+	]
+}

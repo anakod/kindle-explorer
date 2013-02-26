@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="FileExplorer" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Release">
+				<Option output="bin/Release/FileExplorer" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-DWINDOWS" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="C:\Soft\GTK\lib\atk-1.0.lib" />
+					<Add library="C:\Soft\GTK\lib\cairo.lib" />
+					<Add library="C:\Soft\GTK\lib\expat.lib" />
+					<Add library="C:\Soft\GTK\lib\fontconfig.lib" />
+					<Add library="C:\Soft\GTK\lib\freetype.lib" />
+					<Add library="C:\Soft\GTK\lib\gailutil.lib" />
+					<Add library="C:\Soft\GTK\lib\gdk_pixbuf-2.0.lib" />
+					<Add library="C:\Soft\GTK\lib\gdk-win32-2.0.lib" />
+					<Add library="C:\Soft\GTK\lib\gio-2.0.lib" />
+					<Add library="C:\Soft\GTK\lib\glib-2.0.lib" />
+					<Add library="C:\Soft\GTK\lib\gmodule-2.0.lib" />
+					<Add library="C:\Soft\GTK\lib\gobject-2.0.lib" />
+					<Add library="C:\Soft\GTK\lib\gthread-2.0.lib" />
+					<Add library="C:\Soft\GTK\lib\gtk-win32-2.0.lib" />
+					<Add library="C:\Soft\GTK\lib\intl.lib" />
+					<Add library="C:\Soft\GTK\lib\libpng.lib" />
+					<Add library="C:\Soft\GTK\lib\pango-1.0.lib" />
+					<Add library="C:\Soft\GTK\lib\pangocairo-1.0.lib" />
+					<Add library="C:\Soft\GTK\lib\pangoft2-1.0.lib" />
+					<Add library="C:\Soft\GTK\lib\pangowin32-1.0.lib" />
+					<Add library="C:\Soft\GTK\lib\zdll.lib" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="resources.bat" />
+					<Mode after="always" />
+				</ExtraCommands>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-mms-bitfields" />
+			<Add option="-Wall" />
+			<Add directory="$(#gtk.include)" />
+			<Add directory="$(#gtk.include)/gtk-2.0" />
+			<Add directory="$(#gtk.include)/cairo" />
+			<Add directory="$(#gtk.include)/gdk" />
+			<Add directory="$(#gtk.include)/glib-2.0" />
+			<Add directory="$(#gtk.lib)/glib-2.0/include" />
+			<Add directory="$(#gtk.include)/pango-1.0" />
+			<Add directory="$(#gtk.lib)/gtk-2.0/include" />
+			<Add directory="$(#gtk.include)/atk-1.0" />
+			<Add directory="$(#gtk.include)/gdk-pixbuf-2.0" />
+		</Compiler>
+		<Linker>
+			<Add library="gtk-win32-2.0" />
+			<Add library="gobject-2.0" />
+			<Add library="glib-2.0" />
+			<Add directory="$(#gtk.lib)" />
+		</Linker>
+		<Unit filename="../KindleLib/Drawing.h" />
+		<Unit filename="../KindleLib/ShakeWindow.h" />
+		<Unit filename="FSModel.h" />
+		<Unit filename="FileData.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="tinydir.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
