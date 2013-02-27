@@ -153,22 +153,24 @@ public:
             g_signal_connect(window, "destroy", G_CALLBACK(DestroyShakeWindow), this);
         OnClick(name, (ButtonClickEvent)CloseShakeWindow, this);
     }
+
     void Close()
     {
+        for (map<GtkWidget*, ButtonImage*>::iterator it = btnImages.begin(); it != btnImages.end(); it++)
+            delete it->second;
+        btnImages.clear();
+
         GtkWidget* window = this->window;
         GtkBuilder *builder = this->builder;
 
         this->builder = NULL;
         this->window = NULL;
 
+        // You can not do anything here!!! It's true!!!
         if (builder != NULL)
             g_object_unref(G_OBJECT(builder));
         if (window != NULL)
             gtk_widget_destroy(GTK_WIDGET(window));
-
-        for (map<GtkWidget*, ButtonImage*>::iterator it = btnImages.begin(); it != btnImages.end(); it++)
-            delete it->second;
-        btnImages.clear();
     }
 
     void SetText(const char* widget, string text, string font = "")
