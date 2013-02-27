@@ -138,7 +138,7 @@ public:
         GdkPixbuf* src = gdk_pixbuf_new_from_file(imagePath.c_str(), NULL);
         GdkPixbuf* dst = MakeDisabled(src);
         btnImages[button] = new ButtonImage(src, dst);
-        gtk_button_set_image((GtkButton*)button, btnImages[button]->GetImage(gtk_widget_get_sensitive(button)));
+        gtk_button_set_image((GtkButton*)button, btnImages[button]->GetImage(GTK_WIDGET_SENSITIVE(button)));
         if (imgOnly)
             gtk_button_set_label((GtkButton*)button, "");
     }
@@ -229,7 +229,7 @@ public:
         if (it != btnImages.end())
         {
             it->second->Resize(it->second->Width * w / cw, it->second->Height * h / ch);
-            gtk_button_set_image((GtkButton*)widget, it->second->GetImage(gtk_widget_get_sensitive(widget)));
+            gtk_button_set_image((GtkButton*)widget, it->second->GetImage(GTK_WIDGET_SENSITIVE(widget)));
         }
     }
 
