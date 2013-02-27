@@ -8,6 +8,7 @@
 #include "FSModel.h"
 #include "timer.h"
 
+#define KE_VERSION "1.5"
 #define EDITOR "/mnt/us/extensions/leafpad/bin/leafpad"
 #define TERMINAL "/mnt/us/extensions/kterm/bin/kterm"
 
@@ -203,7 +204,7 @@ void ShowAbout(GtkWidget *widget, gpointer data)
 
   GtkWidget *dialog = gtk_about_dialog_new();
   gtk_about_dialog_set_name(GTK_ABOUT_DIALOG(dialog), "KindleExplorer");
-  gtk_about_dialog_set_version(GTK_ABOUT_DIALOG(dialog), "1.0");
+  gtk_about_dialog_set_version(GTK_ABOUT_DIALOG(dialog), KE_VERSION);
   gtk_about_dialog_set_copyright(GTK_ABOUT_DIALOG(dialog), "Developer: anakod");
   gtk_about_dialog_set_comments(GTK_ABOUT_DIALOG(dialog), "Fast and simple file explorer.\n\nhttp://66bit.ru");
   //gtk_about_dialog_set_website(GTK_ABOUT_DIALOG(dialog), "");
@@ -261,7 +262,7 @@ int main (int argc, char **argv)
     ShakeWindow::Initialize();
     ShakeWindow::SetDefaultTitle("L:A_N:application_FileExplorer:Window");
     win = new ShakeWindow();
-    win->Load(GetAppFile("res/MainWindow.glade"), true);
+    win->Load(GetResFile("MainWindow.glade"), true);
     win->SetCloseButton("btnClose");
     lstFiles = win->GetWidget("lstFiles");
     txtPath = win->GetWidget("txtPath");
